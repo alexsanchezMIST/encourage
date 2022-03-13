@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # The Timber Starter Theme
 
@@ -31,3 +32,6 @@ Install this theme as you would any other, and be sure the Timber plugin is acti
 * [A real live Timber theme](https://github.com/laras126/yuling-theme).
 * [Timber Video Tutorials](http://timber.github.io/timber/#video-tutorials) and [an incomplete set of screencasts](https://www.youtube.com/playlist?list=PLuIlodXmVQ6pkqWyR6mtQ5gQZ6BrnuFx-) for building a Timber theme from scratch.
 
+=======
+# starter-theme
+>>>>>>> bf6f868161268dd3f6f3983918e2523de7a5a312

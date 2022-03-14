@@ -1,0 +1,135 @@
+h1 {
+
+    @media screen and (max-width: map-get($breakpoints, "small")) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "small")) and (max-width: (map-get($breakpoints, "medium") - 0.0625rem)) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "medium")) and (max-width: (map-get($breakpoints, "large") - 0.0625rem)) {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "large")) and (max-width: (map-get($breakpoints, "xl") - 0.0625rem)) {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "xl")) and (max-width: (map-get($breakpoints, "2xl") - 0.0625rem)) {
+        font-size: 3rem;
+        line-height: 1;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "2xl")) {
+        font-size: 3rem;
+        line-height: 1;
+      }
+
+}
+
+h2 {
+
+    @media screen and (max-width: map-get($breakpoints, "small")) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "small")) and (max-width: (map-get($breakpoints, "medium") - 0.0625rem)) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "medium")) and (max-width: (map-get($breakpoints, "large") - 0.0625rem)) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "large")) and (max-width: (map-get($breakpoints, "xl") - 0.0625rem)) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "xl")) and (max-width: (map-get($breakpoints, "2xl") - 0.0625rem)) {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "2xl")) {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+
+}
+
+h3 {
+
+    @media screen and (max-width: map-get($breakpoints, "small")) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "small")) and (max-width: (map-get($breakpoints, "medium") - 0.0625rem)) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "medium")) and (max-width: (map-get($breakpoints, "large") - 0.0625rem)) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "large")) and (max-width: (map-get($breakpoints, "xl") - 0.0625rem)) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "xl")) and (max-width: (map-get($breakpoints, "2xl") - 0.0625rem)) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "2xl")) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+
+}
+
+h4 {
+
+    @media screen and (max-width: map-get($breakpoints, "small")) {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "small")) and (max-width: (map-get($breakpoints, "medium") - 0.0625rem)) {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "medium")) and (max-width: (map-get($breakpoints, "large") - 0.0625rem)) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "large")) and (max-width: (map-get($breakpoints, "xl") - 0.0625rem)) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "xl")) and (max-width: (map-get($breakpoints, "2xl") - 0.0625rem)) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    
+      @media screen and (min-width: map-get($breakpoints, "2xl")) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+}

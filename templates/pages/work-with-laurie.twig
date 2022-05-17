@@ -1,0 +1,80 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	{# BEGIN HERO SECTION #}
+	<section id="services-hero" class="section py-18">
+		<div class="container">
+			<div class="hero__wrapper">
+				<div class="hero__right">
+					<h1 class="hero__heading">Work with Laurie</h1>
+					<p class="hero__subheading">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A quo in voluptatibus, quas fuga ut earum unde fugiat? Placeat soluta temporibus quae obcaecati? Hic provident quam natus vel consequatur distinctio.</p>
+					<a href="https://my.practicebetter.io/#/5c2c0256627d790b8ceefe79/bookings?r=5caf4d67627db307840e2367&step=services" target="_blank" class="btn btn--primary"><span class="phone-icon"></span>Book a Call</a>
+				</div>
+				<div class="hero__left"></div>
+			</div>
+		</div>
+	</section>
+	{# END HERO SECTION #}
+
+	{# BEGIN INTRO SECTION #}
+	<section id="intro" class="section py-18">
+		<div class="container">
+			<div class="intro__wrapper">
+				<article class="prose">
+					<h2>Do you want to take back control of your health?</h2>
+						<p>For many of us in our 50s and beyond, decades of balancing work, family and home life has taken its toll.</p>
+						<p>Your best intentions for eating healthy, staying in shape and managing stress over the years have left you confused about what to eat, how to prepare healthy meals easily and make lifestyle changes that last.</p>
+						<p>If the quality of your health as you age is getting in the way of your lifestyle aspirations...</p>
+						<p>If you're worried about taking medications or having surgery...</p>
+						<p>And, if you wonder if there's something else you can do to get back to your old self and the energy you once had, <strong>not only for right now but for all your tomorrows...</strong></p>
+						<p>Then Eat to Heal Over 50 is your key to wellness in as little as 90 days.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+	{# END INTRO SECTION #}
+
+	{# BEGIN CONTENT SECTION #}
+	<section id="coaching" class="section py-18">
+		<div class="container">
+			<article class="prose">
+				<h2 class="content__heading">As a client of my health coaching program, you will...</h2>
+				<ul class="list">
+					<li class="list__item">Set and achieve empowering health goals including diet, exercise and overall wellness;</li>
+					<li class="list__item">Understand role of diet in helping to slow, stop and in some cases reverse chronic disease;</li>
+					<li class="list__item">Work to achieve and maintain your ideal weight, reduce cravings and increase energy;</li>
+					<li class="list__item">Learn about plant-based foods and how you can easily add more greens, legumes, whole grains and fruits.</li>
+				</ul>
+				<h2 class="content__heading">Custom coaching and nutrition knowledge to meet your needs...</h2>
+				<ul class="list">
+					<li class="list__item"><strong>Customized Eat to Heal program.</strong> Assess your needs and help you regain your health by changing what and how you eat. Monthly support with a personalized premium coaching program, 3-month minimum commitment.</li>
+					<li class="list__item"><strong>One-on-One Support.</strong> Overcome obstacles, identity triggers and issues, targeted plant-based insights, e-mail support between sessions, squash cravings, handouts, recipes, and kitchen strategies that fit your life.</li>
+					<li class="list__item"><strong>Lifestyle, not Diet.</strong> Understand the role of food as medicine and enjoy a full and energetic life for many years to come.</li>
+				</ul>
+			</article>
+		</div>
+	</section>
+	{#END CONTENT SECTION #}
+
+	{% include 'partial/testimonials.twig' %}
+
+	{# BEGIN PRICING SECTION #}
+	<section id="pricing" class="section py-18">
+		<div class="container">
+			<h2 class="pricing__heading">How to work with me</h2>
+			<div class="card__wrapper">
+				{% for post in posts %}
+					<a href="{{ post.link }}" class="pricing__card">
+						<p class="eyebrow__text">{{ post.meta( 'tag' )}}</p>
+						<h3 class="card__heading">{{ post.title }}</h3>
+						<p class="card__description">{{ post.meta( 'description' )}}</p>
+						<div class="btn btn--primary">Learn More</div>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	{# END PRICING SECTION #}
+
+{% endblock %}

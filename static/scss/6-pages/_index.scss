@@ -1,0 +1,414 @@
+// ********************
+// HERO SECTION
+// ********************
+
+#hero {
+  z-index: 800;
+  box-shadow: 0 4px 6px -4px rgba($black, 0.1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 50;
+    top: 4rem;
+    left: -4rem;
+    width: 10rem;
+    height: 10rem;
+    background-image: url("static/img/laurie-broccoli.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    filter: drop-shadow(0 2px 4px rgba($black, 0.8));
+    transform: rotate(25deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -1.75rem;
+    left: 0;
+    margin: auto;
+    width: 3.5rem;
+    height: 1.75rem;
+    border-top: 1px solid $white;
+    background-image: url("static/img/arrow-white.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: drop-shadow(0 4px 6px rgba($black, 0.05));
+  }
+}
+
+.hero__wrapper {
+  position: relative;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-gap: 3.75rem;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.eyebrow {
+  font-size: 1.25rem;
+  line-height: 1;
+  font-weight: 700;
+  color: $sushi;
+  margin-bottom: 0.625rem;
+  text-transform: uppercase;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.hero__img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40rem;
+  background-image: url("static/img/laurie-plate.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  filter: drop-shadow(2px 4px 2px rgba($black, 0.5));
+}
+
+.hero__left__img {
+  width: 26rem;
+  height: 34rem;
+  //box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+  animation: scale 10s infinite ease-in-out;
+}
+
+.hero__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem 3.75rem;
+  background-color: $white;
+  border: 1px solid map-get($slate, "100");
+  box-shadow: 0 20px 25px -5px rgba($black, 0.1),
+    0 8px 10px -6px rgba($black, 0.1);
+}
+
+.hero__heading {
+  @extend h2;
+  font-weight: 700;
+  margin-bottom: 0.625rem;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.hero__subheading {
+  font-size: 1.125rem;
+  line-height: 1.33rem;
+  font-weight: 500;
+  color: map-get($slate, "400");
+}
+
+.hero__subheading + a {
+  margin-top: 0.625rem;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    margin-top: 1.25rem;
+  }
+}
+
+.hero__form {
+  width: 100%;
+  margin: 0.625rem 0;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    margin: 1.25rem 0;
+  }
+}
+
+button[type="submit"] {
+  @extend .btn;
+  @extend .btn--primary;
+  width: 100%;
+  background-color: $sanguine;
+}
+
+.download-icon {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("static/img/download.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-right: 0.5rem;
+}
+
+.phone-icon {
+  @extend .download-icon;
+  background-image: url("static/img/phone.svg");
+}
+
+// ********************
+// INTRO SECTION
+// ********************
+
+#intro {
+  z-index: 700;
+  background-color: map-get($slate, "50");
+
+  /*   &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 3.5rem;
+    height: 1.75rem;
+    background-image: url("static/img/arrow-white.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  } */
+}
+
+.intro__wrapper {
+  width: 100%;
+  max-width: 54.375rem;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+  background-color: $white;
+  box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+}
+
+.intro__heading {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+// ********************
+// IMAGE SECTION
+// ********************
+
+.section--img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($forest, 0.1);
+  background-blend-mode: multiply;
+}
+
+.img__banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// ********************
+// CONTENT SECTION
+// ********************
+
+#content {
+  z-index: 800;
+  box-shadow: 0 4px 6px -4px rgba($black, 0.1);
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -1.75rem;
+    left: 0;
+    margin: auto;
+    width: 3.5rem;
+    height: 1.75rem;
+    border-top: 1px solid $white;
+    background-image: url("static/img/arrow-white.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: drop-shadow(0 4px 6px rgba($black, 0.05));
+  }
+}
+
+// ********************
+// LAURIE SECTION
+// ********************
+
+#laurie {
+  background-color: map-get($slate, "50");
+}
+
+.laurie__wrapper {
+  @extend .hero__wrapper;
+}
+
+.laurie__left {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -15%;
+    right: -5%;
+    width: 11rem;
+    height: 7.5rem;
+    background-image: url("static/img/laurie-sticker.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 1.75rem;
+    box-shadow: 0 10px 15px -3px rgba($black, 0.1),
+      0 4px 6px -4px rgba($black, 0.1);
+    transform: rotate(-2.5deg);
+  }
+}
+
+.laurie__left__img {
+  box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+}
+
+.laurie__heading {
+  @media screen and (min-width: map-get($breakpoints, "small")) and (max-width: (map-get($breakpoints, "large") - 0.0625rem)) {
+    margin-bottom: 0.625rem;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.laurie__subheading {
+  color: map-get($slate, "400");
+}
+
+.laurie__subheading + a {
+  margin-top: 0.625rem;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    margin-top: 1.25rem;
+  }
+}
+
+// ********************
+// LATEST SECTION
+// ********************
+
+#latest {
+  > * {
+    position: relative;
+    z-index: 100;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 3.5rem;
+    height: 1.75rem;
+    background-image: url("static/img/arrow-gray.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 50;
+    right: 0;
+    bottom: 0;
+    width: 20rem;
+    height: 20rem;
+    background-image: url("static/img/laurie-almonds.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    filter: drop-shadow(0 2px 4px rgba($black, 0.8));
+  }
+}
+
+// ********************
+// CTA SECTION
+// ********************
+
+#cta {
+  background-image: url("static/img/laurie-cta.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($forest, 0.1);
+    background-blend-mode: multiply;
+  }
+}
+
+.cta__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+  width: 100%;
+  max-width: 29.375rem;
+  margin: 0 auto;
+}
+
+.cta__heading {
+  @extend h2;
+  font-weight: 700;
+  color: $white;
+  margin-bottom: 1.25rem;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.section__helmet {
+  width: 100%;
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.875rem;
+  text-align: center;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    margin-bottom: 3.75rem;
+  }
+}
+
+.latest__wrapper {
+  @extend .related__wrapper;
+  margin-bottom: 1.875rem;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    margin-bottom: 3.75rem;
+  }
+}

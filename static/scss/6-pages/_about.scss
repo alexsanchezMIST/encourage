@@ -1,0 +1,36 @@
+// ********************
+// HERO SECTION
+// ********************
+
+#hero--about {
+  background-image: url("static/img/laurie-hero.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+// ********************
+// LOGO SECTION
+// ********************
+
+.logo-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.logo {
+  width: auto;
+  height: 5rem;
+  filter: drop-shadow(0 2px 4px rgba($black, 0.1));
+
+  &--small {
+    height: 3.5rem;
+  }
+
+  &--large {
+    height: 6.5rem;
+  }
+}

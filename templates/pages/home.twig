@@ -1,0 +1,126 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{# BEGIN HERO SECTION #}
+<section id="hero" class="section py-18">
+    <div class="container">
+        <div class="hero__wrapper">
+            <div class="hero__left">
+                <p class="eyebrow">Free eBook</p>
+                <h1 class="hero__heading">Are you "sick and tired" of being sick and tired?</h1>
+                <p class="hero__subheading">A healthy way of eating based on whole plant foods doesn't have to be hard. This guide will show you how to achieve that without having complicated meal planning.</p>
+                <form id="hero-form" action="#" class="hero__form">
+                    <input id="name" type="text" name="name" placeholder="First name" required>
+                    <input id="email" type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit" form="hero-form"><span class="download-icon"></span>Get my guide now!</button>
+                </form>
+                <p class="form__disclaimer">We respect your privacy and promise to never send you spam.</p>
+            </div>
+            <div class="hero__img-wrapper">
+                <img src="{{ theme.path ~ "/static/img/laurie-book.webp" }}" alt="" class="hero__left__img">
+            </div>
+        </div>
+    </div>
+</section>
+{# END HERO SECTION #}
+
+{# BEGIN INTRO SECTION #}
+<section id="intro" class="section py-18">
+    <div class="container">
+        <div class="intro__wrapper">
+            <h2 class="intro__heading">The good news is:</h2>
+            <article class="prose">
+                <p>Even if you (or someone you care about) is on the brink of a health crisis, and nothing you've tried has helped you actually get better, <strong>it is possible to regain your health and enjoy a full and energetic life for many years to come!</strong></p>
+                <p>You have always taken care of business or family first, but now it's time to take care of yourself and your health. You don't have a choice.</p>
+                <p>You need to take back control because chronic and possible acute health conditions are getting in your way.</p>
+                <p>You want energy and vitality as you age, and all your body parts!</p>
+                <p>When you were younger, you could eat whatever you wanted. In your 20s and 30s, your life was crazy busy and you didn't stop to think about what you were eating and drinking and how that would catch up with you.</p>
+                <p>But now, in your 50s and beyond, things are getting real with your health. <strong>You're ready to stop, rethink your lifestyle choices, and ... turn over a new leaf.</strong></p>
+            </article>
+        </div>
+    </div>
+</section>
+{# END INTRO SECTION #}
+
+{# BEGIN IMG SECTION #}
+<section id="image" class="section section--img">
+    <img src="{{ theme.path ~ "/static/img/laurie-banner1.webp" }}" alt="" class="img__banner">
+</section>
+{# END IMG SECTION #}
+
+{# BEGIN CONTENT SECTION #}
+<section id="content" class="section py-18">
+    <div class="container">
+        <article class="prose">
+            <h2>It's essential because you are faced with one or more of the following ...</h2>
+            <ul class="list">
+                <li class="list__item">You are facing a serious health condition that requires your immediate attention</li>
+                <li class="list__item">You are concerned that your current health issues will soon lead to something more serious</li>
+                <li class="list__item">You're tired, lack energy and just don't feel like yourself</li>
+                <li class="list__item">You're taking more and more medications</li>
+                <li class="list__item">Your doctor may be recommending surgery</li>
+                <li class="list__item">You lose weight but then gain it back, and then some</li>
+                <li class="list__item">You don't have time for a lot of exercise or anything too complicated</li>
+            </ul>
+            <h2>... This isn't how you want to live</h2>
+            <p>You want to live fully and enjoy the rest of your life.</p>
+            <p>The way to turn this all around starts with changing your diet. Because your diet is what fuels and feeds your body.</p>
+            <p>Food can slowly poison your body, stripping your health and vitality. Or food can be your medicine, healing and energizing you, no matter what your age is.</p>
+            <p>And the right foods can slow, stop and even reverse heart disease, diabetes, GI disorders, Autoimmune Disease, cancer, arthritis, GERD and so much more.</p>
+            <p>It's your choice.</p>
+            <p>Now you just need to know where to start, what to eat, and the truth about health and nutrition.</p>
+            <p>I can help.</p>
+        </article>
+    </div>
+</section>
+{# END CONTENT SECTION #}
+
+{# BEGIN LAURIE SECTION #}
+<section id="laurie" class="section pt-36 pb-18">
+    <div class="container">
+        <div class="laurie__wrapper">
+            <div class="laurie__left">
+                <img src="{{ theme.path ~ '/static/img/laurie-headshot.webp' }}" alt="" class="laurie__left__img">
+            </div>
+            <div class="laurie__right">
+                <p class="eyebrow">More than a vegan</p>
+                <h2 class="laurie__heading">About Laurie</h2>
+                <p class="laurie__subheading">When a test result gave me pause, I decided to take back control of my health by using food as my medicine. I went on to study plant-based nutrition and health coaching so that I could help others become chronically well.</p>
+                <a href="/about" class="btn btn--secondary">Read more</a>
+            </div>
+        </div>
+    </div>
+</section>
+{# END LAURIE SECTION #}
+
+{# BEGIN LATEST SECTION #} 
+<section id="latest" class="section py-18">
+    <div class="container">
+        <div class="section__helmet">
+            <h2 class="latest__heading">Latest posts</h2>
+        </div>
+		<div class="latest__wrapper">
+			{% for post in posts %}
+			<a href="{{ post.link }}" class="posts__card">
+                <img src="{{ theme.path ~ '/static/img/placeholder.webp' }}" alt="" class="posts__card__img">
+                <div class="posts__card__bottom">
+                    <h3 class="posts__card__title">{{ post.title }}</h3>
+                    <p class="posts__card__description">{{ post.content|excerpt(10) }}</p>
+                    <p class="posts__card__link">Read more →</p> 
+                </div>
+            </a>
+			{% endfor %}
+		</div>
+        <div class="btn-wrapper">
+            <a href="/blog" class="btn btn--secondary">View all posts</a>
+        </div>
+    </div>
+</section>
+{# END LATEST SECTION #}
+
+{% include 'partial/testimonials.twig' %}
+
+{% include 'partial/cta.twig' %}
+
+{% endblock %}

@@ -1,0 +1,73 @@
+#hero--classes {
+  background-image: url("static/img/laurie-starch.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($forest, 0.4);
+    background-blend-mode: multiply;
+  }
+}
+
+.ready__wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1.875rem;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.ready__left {
+  padding-right: 1.875rem;
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    grid-column: span 2 / span 2;
+  }
+}
+
+.ready__right {
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    grid-column: span 3 / span 3;
+  }
+}
+
+.ready__heading {
+  @extend h4;
+  margin-bottom: 1.25rem;
+}
+
+.ready__subheading {
+  @extend .laurie__subheading;
+}
+
+#classes {
+  background-color: map-get($slate, "50");
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 3.5rem;
+    height: 1.75rem;
+    background-image: url("static/img/arrow-white.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}

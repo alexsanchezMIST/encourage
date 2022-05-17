@@ -1,0 +1,29 @@
+{% extends "base.twig" %}
+
+{% block content %} 
+
+{# BEGIN HERO SECTION #}
+<section id="contact-hero" class="section section--small">
+    <div class="container">
+        <div class="hero--blog__wrapper">
+            <div class="section__helmet">
+                <h1 class="hero--blog__heading">Contact Me</h1>
+                <p class="hero__subheading">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fuga impedit expedita doloribus veritatis temporibus ipsam, molestiae sit perferendis asperiores debitis vero dicta quos totam doloremque quasi molestias fugiat nam.</p>
+            </div>
+        </div>
+        <div class="form__wrapper">
+            <form action="#" id="contact" class="contact-form">
+                <input class="contact__input--text" type="text" name="First name" placeholder="First name">
+                <input class="contact__input--text" type="text" name="Last name" placeholder="Last name">
+                <input class="contact__input--email" type="email" name="Email" id="email" placeholder="Email address">
+                <textarea class="contact__textarea" name="message" rows="12" cols="100" placeholder="Enter your message here"></textarea>
+                <input class="contact__input--submit" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</section>
+{# END HERO SECTION #}
+
+{% include 'partial/cta.twig' %}
+
+{% endblock %}

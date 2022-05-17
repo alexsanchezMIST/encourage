@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{# BEGIN HERO SECTION #}
+<section id="hero--classes" class="section section--hero">
+	<div class="container">
+		<div class="hero__wrapper">
+			<div class="hero__left"></div>
+			<div class="hero__right">
+				<h1 class="hero__heading">Plant-based nutrition and cooking classes</h1>
+				<p class="hero__subheading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quisquam quis, assumenda aperiam vitae at illo. Maxime maiores optio ducimus enim laborum doloremque sit doloribus deserunt, aliquid corrupti esse id.</p>
+				<a href="/services" class="btn btn--primary">Work With Me</a>
+			</div>
+		</div>
+	</div>
+</section>
+{# END HERO SECTION #}
+
+<section id="ready" class="section">
+    <div class="container">
+        <div class="ready__wrapper">
+            <div class="ready__left">
+                <p class="eyebrow">Online Zoom classes</p>
+                <h2 class="ready__heading">Ready for something more than a cooking class?</h2>
+                <p class="ready__subheading">Sign up soon–early bird and buddy discounts available! Make an investment in your health today, and invite a friend.</p>
+                <a href="/" class="btn btn--primary">Button</a>
+            </div>
+            <div class="ready__right">
+                <ul class="list">
+                    <li class="list__item">Learn how our <strong>foor choices can heal</strong> many chronic health conditions.</li>
+                    <li class="list__item">Understand the <strong>evidence-based science</strong> from leading doctors and researchers.</li>
+                    <li class="list__item">Sample EASY, healthy delicious <strong>recipes</strong> and enjoy <strong>cooking demonstrations.</strong></li>
+                    <li class="list__item"><strong>Engaging online classes.</strong>Working Plant-Based Kitchen.<strong>Supportive group coaching.</strong></li>
+                    <li class="list__item">Learn how <strong>food heals</strong> many <strong>chronic health conditions including:</strong> Heart Disease. Diabetes. Digestive Health. Cancer. Weight Loss. Hormone Health. Brain Health.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="classes" class="section">
+    <div class="container">
+        <h2 class="posts__heading">Online plant-based nutrition and cooking classes</h2>
+        <div class="posts__wrapper">
+            {{ post.content }}
+<!--             {% for post in posts %}
+            <a href="#" target="_blank" class="posts__card">
+                <img src="{{ post.thumbnail }}" alt="" class="posts__card__img">
+                <div class="posts__card__bottom">
+                    <h3 class="posts__card__title">{{ post.title }}</h3>
+                    <p class="posts__card__description">Lorem ipsum dolor</p>
+                    <p class="posts__card__link">Buy now<img src="{{ theme.path ~ '/static/img/external-link.svg' }}" alt="" class="icon"></p> 
+                </div>
+            </a>
+            {% endfor %} -->
+        </div>
+    </div>
+</section>
+
+{% include 'partial/testimonials.twig' %}
+
+{% include 'partial/cta.twig' %}
+
+{% endblock %}

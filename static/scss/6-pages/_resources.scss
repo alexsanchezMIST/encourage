@@ -1,0 +1,30 @@
+.disclaimer__wrapper {
+  padding: 2.5rem;
+  background-color: #f4f9ed;
+  border: 2px solid $sushi;
+  border-radius: 0.5rem;
+}
+
+.disclaimer__copy {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: start;
+}
+
+#resources {
+  background-color: map-get($slate, "50");
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 3.5rem;
+    height: 1.75rem;
+    background-image: url("static/img/arrow-white.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}

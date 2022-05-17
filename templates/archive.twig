@@ -1,9 +1,39 @@
-{# This file demonstrates using most of the index.twig template and modifying 
-   just a small part. See `search.twig` for an example of another approach #}
-
-{% extends "index.twig" %}
+{% extends "base.twig" %}
 
 {% block content %}
-  <h3>This is my archive</h3>
-  {{ parent() }}
+
+{# BEGIN HERO SECTION #}
+<section id="hero" class="section section--small">
+  <div class="container">
+      <div class="hero--blog__wrapper">
+          <div class="section__helmet">
+              <h1 class="hero--blog__heading">Other posts</h1>
+              <p class="hero__subheading">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fuga impedit expedita doloribus veritatis temporibus ipsam, molestiae sit perferendis asperiores debitis vero dicta quos totam doloremque quasi molestias fugiat nam.</p>
+          </div>
+      </div>
+  </div>
+</section>
+{# END HERO SECTION #}
+
+{# BEGIN POSTS SECTION #}
+<section id="posts" class="section section--small">
+    <div class="container">
+        <div class="posts__wrapper">
+            {% for post in posts %}
+            <a href="{{ post.link }}" class="posts__card">
+                <img src="{{ theme.path ~ '/static/img/placeholder.webp' }}" alt="" class="posts__card__img">
+                <div class="posts__card__bottom">
+                    <h3 class="posts__card__title">{{ post.title }}</h3>
+                    <p class="posts__card__description">{{ post.content|excerpt(8) }}</p>
+                    <p class="posts__card__link">Read more →</p> 
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{# END POSTS SECTION #}
+
+{% include 'partial/pagination.twig' %}
+
 {% endblock %}

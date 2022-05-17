@@ -1,0 +1,78 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{# BEGIN POST SECTION #}
+<section id="post" class="section py-18">
+	<div class="container">
+        <div class="content__wrapper">
+            <div class="content__left">
+                <div class="badge-wrapper">
+                    {% for tag in tags|slice(0, 3) %}
+                    <a href="/tag/{{ tag.slug }}" class="badge">{{ tag.name }}</a>
+                    {% endfor %}
+                </div>
+                <h1 class="post__heading">{{ post.title }}</h1>
+                <div class="byline-wrapper">
+                    <img src="{{ theme.path ~ '/static/img/laurie-avatar.webp' }}" alt="" class="post__avatar">
+                    <p class="post__author">By Laurie Courage</p>
+                </div>
+                <img src="{{ theme.path ~ '/static/img/placeholder.webp' }}" alt="" class="post__img">
+                <article class="prose">
+                    {{ post.content }}
+                </article>
+                <div class="post__snippet">
+                    <img src="{{ theme.path ~ '/static/img/laurie-book.webp' }}" alt="" class="snippet__img">
+                    <div class="snippet__right">
+                        <p class="snippet__copy">Think a plant-based diet is complicated and don't know where to start? Grab a copy of my FREE 5 tips for a stress-free plant-based diet.</p>
+                        <a href="#" class="nav__btn">Click here to download</a>
+                    </div>  
+                </div>
+            </div>
+            <div class="content__sidebar">
+                <div class="search__card">
+                    <form action="{{ site.link }}" method="GET" class="search__form">
+                        <input type="search" name="s" placeholder="Search all posts ...">
+                    </form>
+                </div>
+                <div class="optin__card">
+                    <img src="{{ theme.path ~ '/static/img/laurie-book.webp' }}" alt="" class="optin__img">
+                    <h2 class="sidebar__heading">Are you "sick and tired" of being sick and tired?</h2>
+                    <a href="#" class="btn btn--primary"><span class="download-icon"></span>Get my guide now!</a>
+                </div>
+                <div class="laurie__card">
+                    <img src="{{ theme.path ~ '/static/img/laurie-headshot.webp' }}" alt="" class="laurie__img">
+                    <h2 class="sidebar__heading">About Laurie Courage</h2>
+                    <p class="laurie__excerpt">When a test result gave me pause, I decided to take back control of my health by using food as my medicine.</p>
+                    <a href="/about" class="laurie__btn">Read more</a>
+                </div>
+            </div>
+        </div>
+	</div>
+
+</section>
+{# END POST SECTION #}
+
+{# BEGIN RELATED SECTION #} 
+<section id="related" class="section py-18">
+	<div class="container">
+        <div class="section__helmet">
+            <h2 class="related__heading">Related posts</h2>
+        </div>
+		<div class="related__wrapper">
+			{% for post in posts %}
+			<a href="{{ post.link }}" class="posts__card">
+                <img src="{{ post.thumbnail }}" alt="" class="posts__card__img">
+                <div class="posts__card__bottom">
+                    <h3 class="posts__card__title">{{ post.title }}</h3>
+                    <p class="posts__card__description">Lorem ipsum dolor</p>
+                    <p class="posts__card__link">Read more<img src="{{ theme.path ~ '/static/img/arrow-right.svg' }}" class="icon" /></p> 
+                </div>
+            </a>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{# END RELATED SECTION #}
+
+{% endblock %}

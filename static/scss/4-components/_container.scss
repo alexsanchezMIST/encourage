@@ -6,7 +6,7 @@
   width: 100%;
   margin: 0 auto;
 
-  @media screen and (max-width: map-get($breakpoints, "small") - 0.0625rem) {
+  @media screen and (max-width: (map-get($breakpoints, "small") - 0.0625rem)) {
     padding: 0 1rem;
   }
 
@@ -30,9 +30,8 @@
     padding: 0 5rem;
   }
 
-  @media screen and (min-width: map-get($breakpoints, "xl")) and (max-width: (map-get($breakpoints, "2xl") - 0.0625rem)) {
+  @media screen and (min-width: map-get($breakpoints, "2xl")) {
     max-width: 96rem; // 1536px
     padding: 0 6rem;
   }
-
 }

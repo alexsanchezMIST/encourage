@@ -9,6 +9,9 @@
 // ********************
 
 @import "1-helpers/breakpoints";
+@import "1-helpers/variables";
+@import "1-helpers/keyframes";
+@import "1-helpers/utilities";
 
 // ********************
 // 2 - VENDORS
@@ -19,19 +22,37 @@
 // ********************
 
 @import "3-globals/base";
+@import "3-globals/font-face";
 @import "3-globals/typography";
 
 // ********************
 // 4 - COMPONENTS
 // ********************
 
+@import "4-components/button";
 @import "4-components/container";
+@import "4-components/form";
+@import "4-components/pagination";
 @import "4-components/section";
+@import "4-components/testimonials";
 
 // ********************
 // 5 - LAYOUT
 // ********************
 
+@import "5-layout/header";
+@import "5-layout/footer";
+
 // ********************
 // 6 - PAGES
 // ********************
+
+@import "6-pages/index";
+@import "6-pages/about";
+@import "6-pages/blog";
+@import "6-pages/classes";
+@import "6-pages/contact";
+@import "6-pages/post";
+@import "6-pages/resources";
+@import "6-pages/services";
+@import "6-pages/single";

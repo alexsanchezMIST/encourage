@@ -1,0 +1,25 @@
+#contact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, min-content));
+  column-gap: 1.875rem;
+  max-width: 35.625rem;
+  margin: 0 auto;
+}
+
+.contact__input--text {
+  grid-column: span 1 / span 1;
+}
+
+.contact__input--email {
+  grid-column: span 2 / span 2;
+}
+
+.contact__input--submit {
+  grid-column: span 2 / span 2;
+}
+
+.contact__textarea {
+  width: 100%;
+  grid-column: span 2 / span 2;
+}

@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{# BEGIN HERO SECTION #}
+<section id="blog-hero" class="section section--small">
+    <div class="container">
+        <div class="hero--blog__wrapper">
+            <h1 class="hero--blog__heading">Testimonials</h1>
+            <p class="hero--blog__subheading">It helps to have a guide on this journey. These are some of my favorite resources, and I will continue to add more. Let me know what resource ideas you need.</p>
+        </div>
+    </div>
+</section>
+{# END HERO SECTION #}
+
+{# BEGIN POSTS SECTION #}
+<section id="resources" class="section section--small">
+    <div class="container">
+    {% for post in testimonials %}
+        <div class="testimonial">
+            <p class="testimonial__content">{{ post.content|excerpt(20) }}</p>
+            <p class="testimonial__name">—{{ post.title }}</p>
+        </div>
+    {% endfor %}
+    </div>
+</section>
+{# END POSTS SECTION #}
+
+{% include 'partial/cta.twig' %}
+
+{% endblock %}

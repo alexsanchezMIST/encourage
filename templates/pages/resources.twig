@@ -1,0 +1,43 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{# BEGIN HERO SECTION #}
+<section id="blog-hero" class="section py-18">
+    <div class="container">
+        <div class="hero--blog__wrapper">
+            <h1 class="hero--blog__heading">Laurie Recommends</h1>
+            <p class="hero--blog__subheading">It helps to have a guide on this journey. These are some of my favorite resources, and I will continue to add more. Let me know what resource ideas you need.</p>
+            <div class="disclaimer__wrapper">
+                <p class="disclaimer__copy"><strong>Disclaimer:</strong> Some of these are affiliate links, which means that if you click through a link and decide to buy something, I may get a little money for that. It helps my business continue to bring you this information about plant-based wellness. I am so grateful for your support. You can always opt to buy it directly elsewhere. The most important thing is that you have the help you need to make this lifestyle change.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{# END HERO SECTION #}
+
+{# BEGIN POSTS SECTION #}
+<section id="resources" class="section py-18">
+    <div class="container">
+        <div class="section__helmet">
+            <h2 class="resources__heading">List of resources</h2>
+        </div>
+        <div class="posts__wrapper">
+            {% for post in posts %}
+            <a href="{{ post.meta('purchase_link') }}" target="_blank" class="posts__card">
+                <img src="{{ post.thumbnail }}" alt="" class="posts__card__img">
+                <div class="posts__card__bottom">
+                    <h3 class="posts__card__title">{{ post.title }}</h3>
+                    <p class="posts__card__description">Lorem ipsum dolor</p>
+                    <p class="posts__card__link">Buy now →</p> 
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{# END POSTS SECTION #}
+
+{% include 'partial/cta.twig' %}
+
+{% endblock %}

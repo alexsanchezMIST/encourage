@@ -1,0 +1,75 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{# BEGIN HERO SECTION #}
+<section id="hero--about" class="section py-18">
+	<div class="container">
+		<div class="hero__wrapper">
+			<div class="hero__left"></div>
+			<div class="hero__right">
+				<h1 class="hero__heading">Hi, I'm Laurie Courage</h1>
+				<p class="hero__subheading">I work with people who are on the brink of a health crisis and nothing they have tried has helped them get better. I help them regain their health and enjoy a full and energetic life for many years to come. So you may wonder, how did I get here?.</p>
+				<a href="/services" class="btn btn--primary">Work With Me</a>
+			</div>
+		</div>
+	</div>
+</section>
+{# END HERO SECTION #}
+
+{# BEGIN CONTENT SECTION #}
+<section id="content--about" class="section py-18">
+	<div class="container">
+		<article class="prose has-lead post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			{{ post.content }}
+		</article>
+	</div>
+</section>
+{# END CONTENT SECTION #}
+
+{# BEGIN LOGO SECTION #} 
+<section id="logo" class="section">
+	<div class="container">
+		<div class="logo-wrapper">
+			<img src="{{ theme.path ~ '/static/img/wfpb-logo.webp' }}" alt="" class="logo">
+			<img src="{{ theme.path ~ '/static/img/tss-logo.webp' }}" alt="" class="logo">
+			<img src="{{ theme.path ~ '/static/img/ffl-logo.webp' }}" alt="" class="logo logo--large">
+			<img src="{{ theme.path ~ '/static/img/rouxbe-logo.webp' }}" alt="" class="logo">
+			<img src="{{ theme.path ~ '/static/img/nba-logo.webp' }}" alt="" class="logo logo--large">
+			<img src="{{ theme.path ~ '/static/img/wkf-logo.webp' }}" alt="" class="logo">
+			<img src="{{ theme.path ~ '/static/img/pncp-logo.webp' }}" alt="" class="logo logo--small">
+		</div>
+	</div>
+</section>
+{# END LOGO SECTION #}
+
+{# BEGIN CONTENT SECTION #}
+<section id="content2--about" class="section py-18">
+	<div class="container">
+		<article class="prose">
+			<h2>Certifications and Credentials:</h2>
+			<ul>
+				<li>Certified Instructor and Starch Solution Certification Course Graduate from Dr. McDougall’s Health and Medical Center</li>
+				<li>Certified Food For Life Educator for the Physicians Committee for Responsible Medicine (PCRM)</li>
+				<li>Member of the American College of Lifestyle Medicine</li>
+				<li>Instructor for the Whole Kids Foundation’s Healthy Teachers Program</li>
+				<li>Whole Food Plant-Based certified provider via WFPB.ORG</li>
+				<li>Certificate in Plant-Based Nutrition from the T. Colin Campbell Foundation</li>
+				<li>Certified Diet and Lifestyle Intervention Practitioner through the Wellness Forum Institute for Health Studies</li>
+				<li>Health coach through the Institute for Integrative Nutrition</li>
+				<li>Certified Health Coach recognized by the American Association of Drugless Practioners</li>
+				<li>Certified Holistic Health and Wellness Coach and Plant-Based Nutrition Educator</li>
+				<li>Rouxbe Professional Plant-Based Certificate program graduate</li>
+				<li>Certified Never Binge Again coach</li>
+			</ul>
+			<p>In addition to continuing to study Plant-Based Nutrition, I am continuing to study advanced coaching techniques.</p>
+		</article>
+	</div>
+</section>
+{# END CONTENT SECTION #}
+
+{% include 'partial/testimonials.twig' %}
+
+{% include 'partial/cta.twig' %} 
+
+{% endblock %}

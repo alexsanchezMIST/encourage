@@ -1,0 +1,27 @@
+#related {
+  background-color: map-get($slate, "50");
+}
+
+.post__featured {
+  object-fit: cover;
+  box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+  border-radius: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.post__heading {
+  @extend h2;
+}
+
+.related__wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 1.875rem;
+  align-items: flex-start;
+
+  @media screen and (min-width: map-get($breakpoints, "large")) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+}

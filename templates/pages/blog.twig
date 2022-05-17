@@ -1,0 +1,52 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{# BEGIN HERO SECTION #}
+<section id="blog-hero" class="section py-18">
+    <div class="container">
+        <div class="hero--blog__wrapper">
+            <div class="section__helmet">
+                <h1 class="hero--blog__heading">Blog</h1>
+                <p class="hero__subheading">When I decided to eat more plants, I had to learn a whole new way of thinking about food. Eating better leads to cooking differently. And when the ingredients matter, you will want to grow your own, or at least become friends with a farmer or a farmers market. And reading ingredient labels will become second nature, at least until you figure out how to eat less things that come in a package. Ergo the reason for this blog and my focus on greens, lots of them, in the garden, in the store, in the kitchen and in our bodies. Lots to share.</p>
+            </div>
+            <form action="#" id="blog-form" class="hero--blog__form">
+                <input class="blog__input--text" type="text" name="name" placeholder="First name">
+                <input class="blog__input--email" type="email" name="email" id="email" placeholder="Email address">
+                <input class="blog__input--submit" type="submit" value="Sign up now">
+            </form>
+            <p class="form__disclaimer">We value your privacy and promise to never send you spam.</p>
+        </div>
+    </div>
+</section>
+{# END HERO SECTION #}
+
+{# BEGIN POSTS SECTION #}
+<section id="posts" class="section pt-18 pb-9">
+    <div class="container">
+        <h2 class="posts__heading">Latest posts</h2>
+        <div class="posts__wrapper">
+            {% for post in posts %}
+            <a href="{{ post.link }}" class="posts__card">
+                <img src="{{ theme.path ~ '/static/img/placeholder.webp' }}" alt="" class="posts__card__img">
+                <div class="posts__card__bottom">
+                    <h3 class="posts__card__title">{{ post.title }}</h3>
+                    <p class="posts__card__description">{{ post.content|excerpt(8) }}</p>
+                    <p class="posts__card__link">Read more →</p> 
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{# END POSTS SECTION #}
+
+<section id="pagination" class="section py-9">
+    <div class="container">
+        {% include 'partial/pagination.twig' %}
+    </div>
+</section>
+
+{% include 'partial/cta.twig' %}
+
+{% endblock %}

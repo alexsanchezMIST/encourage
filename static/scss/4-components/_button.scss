@@ -1,0 +1,44 @@
+.btn {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 3.5rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 15px -3px (rgba($black, 0.1)),
+    0 4px 6px -4px (rgba($black, 0.1));
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px (rgba($black, 0.1)),
+      0 8px 10px -6px (rgba($black, 0.1));
+  }
+
+  &--primary {
+    color: $white;
+    background-color: $sanguine;
+    border: 1px solid $sanguine;
+  }
+
+  &--secondary {
+    color: $sanguine;
+    background-color: $white;
+    border: 1px solid $sanguine;
+  }
+}
+
+.btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,13 +1,38 @@
-{# see `archive.twig` for an alternative strategy of extending templates #}
 {% extends "base.twig" %}
 
 {% block content %}
-  {# see `base.twig:27` for where this block's content will be inserted #}
-  <div class="content-wrapper">
-    {% for post in posts %}
-      {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-    {% endfor %}
 
-    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+{# BEGIN HERO SECTION #}
+<section id="hero" class="section section--small">
+  <div class="container">
+      <div class="hero--blog__wrapper">
+          <div class="section__helmet">
+              <h1 class="hero--blog__heading">Search results for: {{ query }}</h1>
+          </div>
+      </div>
   </div>
+</section>
+{# END HERO SECTION #}
+
+{# BEGIN POSTS SECTION #}
+<section id="posts" class="section section--small">
+    <div class="container">
+        <div class="posts__wrapper">
+            {% for post in posts %}
+            <a href="{{ post.link }}" class="posts__card">
+                <img src="{{ theme.path ~ '/static/img/placeholder.webp' }}" alt="" class="posts__card__img">
+                <div class="posts__card__bottom">
+                    <h3 class="posts__card__title">{{ post.title }}</h3>
+                    <p class="posts__card__description">{{ post.content|excerpt(8) }}</p>
+                    <p class="posts__card__link">Read more →</p> 
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{# END POSTS SECTION #}
+
+{% include 'partial/pagination.twig' %}
+
 {% endblock %}

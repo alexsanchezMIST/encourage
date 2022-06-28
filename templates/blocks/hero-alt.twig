@@ -1,0 +1,13 @@
+<section id="hero--{{ block.id }}" class="section py-18">
+    <div class="container">
+        <div class="hero--blog__wrapper">
+            <h1 class="hero--blog__heading">{{ fields.heading }}Laurie Recommends</h1>
+            <p class="hero--blog__subheading">{{ fields.description }}It helps to have a guide on this journey. These are some of my favorite resources, and I will continue to add more. Let me know what resource ideas you need.</p>
+            {% if fields.has_disclaimer %}
+                <div class="disclaimer__wrapper">
+                    <p class="disclaimer__copy">{{ fields.disclaimer }}<strong>Disclaimer:</strong> Some of these are affiliate links, which means that if you click through a link and decide to buy something, I may get a little money for that. It helps my business continue to bring you this information about plant-based wellness. I am so grateful for your support. You can always opt to buy it directly elsewhere. The most important thing is that you have the help you need to make this lifestyle change.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

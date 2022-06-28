@@ -9,6 +9,9 @@
             <h1 class="hero__heading">{{ post.title }}</h1>
         </div>
         <article class="prose">
+            {% if post.meta('featured_image') %}
+                <img src="{{ Image(post.meta('featured_image')).src }}" alt="" class="post__img">
+            {% endif %}
             {{ post.content }}
         </article>
 	</div>
@@ -19,7 +22,7 @@
 <section id="classes" class="section py-18">
     <div class="container">
         <div class="section__helmet">
-            <h2 class="posts__heading">View upcoming classes</h2>
+            <h2 class="section__heading">View upcoming classes</h2>
         </div>
         <div class="posts__wrapper">
             {% for post in classes %}

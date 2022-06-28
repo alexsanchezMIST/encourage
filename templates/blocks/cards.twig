@@ -1,0 +1,15 @@
+<section id="pricing--{{ block.id }}" class="section py-18">
+    <div class="container">
+        <h2 class="pricing__heading">{{ fields.heading }}How to work with me</h2>
+        <div class="card__wrapper">
+            {% for field in fields.card %}
+                <a href="{{ fields.link }}" class="pricing__card">
+                    <p class="eyebrow__text">{{ fields.eyebrow }}</p>
+                    <h3 class="card__heading">{{ fields.heading }}</h3>
+                    <p class="card__description">{{ fields.description }}</p>
+                    <div class="btn btn--primary">{{ fields.button_text }}</div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

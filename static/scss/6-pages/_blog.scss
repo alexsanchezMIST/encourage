@@ -72,8 +72,9 @@
 }
 
 .hero--blog__subheading {
+  @extend .hero__subheading;
   color: map-get($slate, "400");
-  margin-bottom: 2.5rem;
+  margin-bottom: unset;
 }
 
 #blog-form {

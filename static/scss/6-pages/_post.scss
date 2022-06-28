@@ -145,3 +145,7 @@
   border-radius: 0.25rem;
   background-color: rgba($sushi, 0.1);
 }
+
+#post {
+  @extend #content;
+}

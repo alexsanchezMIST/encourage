@@ -3,7 +3,7 @@
 {% block content %}
 
 {# BEGIN HERO SECTION #}
-<section id="blog-hero" class="section section--small">
+<section id="hero" class="section py-18">
     <div class="container">
         <div class="hero--blog__wrapper">
             <h1 class="hero--blog__heading">Testimonials</h1>
@@ -14,14 +14,16 @@
 {# END HERO SECTION #}
 
 {# BEGIN POSTS SECTION #}
-<section id="resources" class="section section--small">
+<section id="testimonials" class="section py-18">
     <div class="container">
-    {% for post in testimonials %}
-        <div class="testimonial">
-            <p class="testimonial__content">{{ post.content|excerpt(20) }}</p>
-            <p class="testimonial__name">—{{ post.title }}</p>
+        <div class="testimonial__grid">
+        {% for post in testimonials %}
+            <div class="testimonial">
+                <p class="testimonial__content">{{ post.content|excerpt(20) }}</p>
+                <p class="testimonial__name">—{{ post.title }}</p>
+            </div>
+        {% endfor %}
         </div>
-    {% endfor %}
     </div>
 </section>
 {# END POSTS SECTION #}

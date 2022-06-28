@@ -291,7 +291,7 @@ p {
 }
 
 .prose.has-lead p:first-of-type {
-  color: map-get($slate, "400");
+  color: map-get($slate, "600");
 
   @media screen and (max-width: map-get($breakpoints, "small")) {
     font-size: 1.125rem;

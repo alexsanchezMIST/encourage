@@ -17,7 +17,7 @@
                     <img src="{{ theme.path ~ '/static/img/laurie-avatar.webp' }}" alt="" class="post__avatar">
                     <p class="post__author">By Laurie Courage</p>
                 </div>
-                <img src="{{ theme.path ~ '/static/img/placeholder.webp' }}" alt="" class="post__img">
+                <img src="{{ post.thumbnail }}" alt="" class="post__img">
                 <article class="prose">
                     {{ post.content }}
                 </article>
@@ -25,7 +25,7 @@
                     <img src="{{ theme.path ~ '/static/img/laurie-book.webp' }}" alt="" class="snippet__img">
                     <div class="snippet__right">
                         <p class="snippet__copy">Think a plant-based diet is complicated and don't know where to start? Grab a copy of my FREE 5 tips for a stress-free plant-based diet.</p>
-                        <a href="#" class="nav__btn">Click here to download</a>
+                        <a href="#" class="btn btn--primary"><span class="download-icon"></span>Download now</a>
                     </div>  
                 </div>
             </div>

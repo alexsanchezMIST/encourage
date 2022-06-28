@@ -5,20 +5,21 @@
 	{# BEGIN HERO SECTION #}
 	<section id="services-hero" class="section py-18">
 		<div class="container">
-			<div class="hero__wrapper">
-				<div class="hero__right">
+			<div class="work__wrapper">
+				<div class="work__left"></div>
+				<div class="work__right">
+					<p class="eyebrow">Services</p>
 					<h1 class="hero__heading">Work with Laurie</h1>
 					<p class="hero__subheading">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A quo in voluptatibus, quas fuga ut earum unde fugiat? Placeat soluta temporibus quae obcaecati? Hic provident quam natus vel consequatur distinctio.</p>
 					<a href="https://my.practicebetter.io/#/5c2c0256627d790b8ceefe79/bookings?r=5caf4d67627db307840e2367&step=services" target="_blank" class="btn btn--primary"><span class="phone-icon"></span>Book a Call</a>
 				</div>
-				<div class="hero__left"></div>
 			</div>
 		</div>
 	</section>
 	{# END HERO SECTION #}
 
 	{# BEGIN INTRO SECTION #}
-	<section id="intro" class="section py-18">
+	<section id="control" class="section py-18">
 		<div class="container">
 			<div class="intro__wrapper">
 				<article class="prose">
@@ -57,7 +58,7 @@
 	</section>
 	{#END CONTENT SECTION #}
 
-	{% include 'partial/testimonials.twig' %}
+	{% include('partials/testimonials.twig') %}
 
 	{# BEGIN PRICING SECTION #}
 	<section id="pricing" class="section py-18">

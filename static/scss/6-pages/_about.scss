@@ -3,10 +3,28 @@
 // ********************
 
 #hero--about {
-  background-image: url("static/img/laurie-hero.webp");
+  background-image: url("static/img/laurie-about-hero.webp");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+.about__wrapper {
+  @extend .hero__wrapper;
+  gap: unset;
+}
+
+.about__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem 3.75rem;
+  background-color: $white;
+  border: 1px solid map-get($slate, "100");
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba($black, 0.1),
+    0 8px 10px -6px rgba($black, 0.1);
 }
 
 // ********************

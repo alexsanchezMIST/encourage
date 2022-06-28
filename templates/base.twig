@@ -8,7 +8,7 @@
 
 	<body class="{{body_class}}" data-template="base.twig">
 		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
-		{% include 'partial/header.twig' %}
+		{% include ('partials/header.twig') %}
 
 		<section id="main" role="main" class="content-wrapper">
 			<div class="wrapper {{sidebar_class}}">
@@ -16,18 +16,13 @@
 					Sorry, no content
 				{% endblock %}
 			</div>
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-			{% endif %}
 		</section>
 
 		{% block footer %}
-			<footer id="footer">
-				{% include 'footer.twig' %}
-			</footer>
+			{% include ('partials/footer.twig') %}
+			<script src="https://unpkg.com/alpinejs" type="text/javascript" crossorigin="anonymous"></script>
 			{{ function('wp_footer') }}
 		{% endblock %}
+		
 	</body>
 </html>

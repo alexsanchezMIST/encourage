@@ -1,0 +1,55 @@
+<header id="header" class="header">
+    {% block header %}
+        <nav id="nav" class="nav" role="navigation">
+            <div class="nav__container">
+                <a href="/" rel="home" class="nav__brand">
+                    <img src="{{ theme.path ~ '/static/img/laurie-logo.svg' }}" alt="" class="nav__logo">
+                </a>
+                <div class="nav__menu">
+                    {% for item in menu.get_items %}
+                        {% if item.children %}
+                            <div class="nav__link-wrapper dropdown" x-data="{ open: false }" @click="open = ! open">
+                                <div class="nav__link dropdown-toggle">
+                                    {{ item.title }}
+                                    <img src="{{ theme.path ~ '/static/img/chevron-down.svg' }}" class="dropdown__icon" alt="">
+                                </div>
+                                <div class="dropdown__menu" x-show="open" @click.outside="open = false" x-cloak>
+                                    {% for child in item.children %}
+                                        <div class="dropdown__item-wrapper">
+                                            <a href="{{ child.link }}" class="dropdown__item">
+                                                {% if child.master_object.meta('icon') %} 
+                                                    <img src="{{ Image(child.master_object.meta('icon')).src }}" alt="" class="dropdown__item__icon">
+                                                {% endif %}
+                                                <div class="dropdown__item__right">
+                                                    <p class="dropdown__link">{{ child.title }} →</p>
+                                                    {% if child.master_object.meta('teaser') %}
+                                                        <p class="dropdown__teaser">{{ child.master_object.meta('teaser') }}</p>
+                                                    {% endif %} 
+                                                </div>
+                                            </a>
+                                        </div>
+                                    {% endfor %}
+                                    <a href="/work-with-laurie" class="dropdown__item full">
+                                        <img src="{{ theme.path ~ '/static/img/collection.svg' }}" alt="" class="dropdown__item__icon">
+                                        <div class="dropdown__item__right">
+                                            <p class="dropdown__link">View All Services →</p>
+                                            <p class="dropdown__teaser">View all of the ways to work with Laurie.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="nav__link-wrapper">
+                                <a href="{{ item.link }}" class="nav__link">{{ item.title }}</a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <a href="https://my.practicebetter.io/#/5c2c0256627d790b8ceefe79/bookings?r=5caf4d67627db307840e2367&step=services" target="_blank" class="nav__btn"><span class="phone-icon"></span>Book a call</a>
+                <div class="nav__hamburger">
+                    <img src="{{ theme.path ~ '/static/img/menu.svg' }}" alt="" class="nav__logo--hamburger">
+                </div>
+            </div>
+        </nav>
+    {% endblock %}
+</header>

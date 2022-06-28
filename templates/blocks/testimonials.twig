@@ -1,0 +1,15 @@
+<section id="testimonial--{{ block.id }}" class="section py-18">
+    <div class="section__helmet">
+        <h2 class="section__heading">{{ fields.heading }}Here's what others have said ... </h2>
+    </div>
+    <div class="container--overflow">
+            <div class="testimonial__wrapper">
+                {% for post in testimonials %}
+                <div class="testimonial">
+                    <p class="testimonial__content">{{ post.content|excerpt(20) }}</p>
+                    <p class="testimonial__name">—{{ post.title }}</p>
+                </div>
+                {% endfor %}
+            </div>
+    </div>
+</section>

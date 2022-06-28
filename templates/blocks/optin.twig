@@ -1,0 +1,16 @@
+<section id="hero" class="section py-18">
+    <div class="container">
+        <div class="hero__wrapper">
+            <div class="hero__left">
+                <p class="eyebrow">{{ fields.eyebrow }}Free eBook</p>
+                <h1 class="hero__heading">{{ fields.heading }}Are you "sick and tired" of being sick and tired?</h1>
+                <p class="hero__subheading">{{ fields.description }}A healthy way of eating based on whole plant foods doesn't have to be hard. This guide will show you how to achieve that without having complicated meal planning.</p>
+                {{ post.content }}
+                <p class="form__disclaimer">We respect your privacy and promise to never send you spam.</p>
+            </div>
+            <div class="hero__img-wrapper">
+                <img src="{{ theme.path ~ "/static/img/laurie-book.webp" }}" alt="" class="hero__left__img">
+            </div>
+        </div>
+    </div>
+</section>

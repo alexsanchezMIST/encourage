@@ -66,8 +66,165 @@ class StarterSite extends Timber\Site {
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'acf/init', [$this, 'my_acf_init'] );
 		parent::__construct();
 	}
+
+	public function my_acf_init() {
+		if ( ! function_exists( 'acf_register_block' ) ) {
+			return;
+		}
+
+		$hero = [
+			'name' => 'hero_block',
+			'title' => __('Hero'),
+			'description' => __('A custom hero block.'),
+			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'category' => 'formatting',
+			'icon' => 'superhero-alt',
+			'keywords' => array('hero', 'content'),
+			'mode' => 'edit',
+			'supports' => array('mode' => false),
+		];
+
+		$hero_alt = [
+			'name' => 'hero_alt_block',
+			'title' => __('Hero Alt'),
+			'description' => __('A custom hero block.'),
+			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'category' => 'formatting',
+			'icon' => 'superhero-alt',
+			'keywords' => array('hero', 'content'),
+			'mode' => 'edit',
+			'supports' => array('mode' => false),
+		];
+
+		$content = [
+			'name' => 'content_block',
+			'title' => __('Content'),
+			'description' => __('A custom content block.'),
+			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'category' => 'formatting',
+			'icon' => 'superhero-alt',
+			'keywords' => array('content'),
+			'mode' => 'edit',
+			'supports' => array('mode' => false),
+		];
+
+		$download = [
+			'name' => 'download_block',
+			'title' => __('Download'),
+			'description' => __('A custom download block.'),
+			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'category' => 'formatting',
+			'icon' => 'superhero-alt',
+			'keywords' => array('download', 'content'),
+			'mode' => 'edit',
+			'supports' => array('mode' => false),
+		];
+
+		$callout = [
+			'name' => 'callout_block',
+			'title' => __('Callout'),
+			'description' => __('A custom callout block.'),
+			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'category' => 'formatting',
+			'icon' => 'superhero-alt',
+			'keywords' => array('callout', 'content'),
+			'mode' => 'edit',
+			'supports' => array('mode' => false),
+		];
+
+		$testimonials = [
+			'name' => 'testimonial_block',
+			'title' => __('Testimonials'),
+			'description' => __('A custom testimonial carousel block.'),
+			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'category' => 'formatting',
+			'icon' => 'superhero-alt',
+			'keywords' => array('testimonial', 'carousel', 'content'),
+			'mode' => 'edit',
+			'supports' => array('mode' => false),
+		];
+
+		$optin = [
+			'name' => 'optin_block',
+			'title' => __('Optin'),
+			'description' => __('A custom optin block.'),
+			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'category' => 'formatting',
+			'icon' => 'superhero-alt',
+			'keywords' => array('optin', 'content'),
+			'mode' => 'edit',
+			'supports' => array('mode' => false),
+		];
+
+		$image = [
+			'name' => 'image_block',
+			'title' => __('Image'),
+			'description' => __('A custom image block.'),
+			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'category' => 'formatting',
+			'icon' => 'superhero-alt',
+			'keywords' => array('image', 'content'),
+			'mode' => 'edit',
+			'supports' => array('mode' => false),
+		];
+
+		$cards = [
+			'name' => 'cards_block',
+			'title' => __('Cards'),
+			'description' => __('A custom cards block.'),
+			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'category' => 'formatting',
+			'icon' => 'superhero-alt',
+			'keywords' => array('cards', 'content'),
+			'mode' => 'edit',
+			'supports' => array('mode' => false),
+		];
+
+		$columns = [
+			'name' => 'columns_block',
+			'title' => __('Columns'),
+			'description' => __('A custom columns block.'),
+			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'category' => 'formatting',
+			'icon' => 'superhero-alt',
+			'keywords' => array('columns', 'content'),
+			'mode' => 'edit',
+			'supports' => array('mode' => false),
+		];
+
+		$blocks = [
+			$hero,
+			$hero_alt,
+			$content,
+			$download,
+			$callout,
+			$testimonials,
+			$optin,
+			$image,
+			$cards,
+			$columns,
+		];
+
+		foreach ($blocks as $block) {
+			acf_register_block_type($block);
+		}
+
+	}
+
+	public function my_acf_block_render_callback( $block, $content = '', $is_preview = false ) {
+
+		$context = Timber::context();
+		$context['block'] = $block;
+		$context['fields'] = get_fields();
+		$context['is_preview'] = $is_preview;
+
+		Timber::render('blocks/' .strtolower($block['title']) . 'twig', $context );
+
+	}
+
 	/** This is where you can register custom post types. */
 	public function register_post_types() {
 

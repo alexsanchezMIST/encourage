@@ -3,6 +3,9 @@
 {% block content %}
 <section id="content--page" class="section py-18">
 	<div class="container">
+		<div class="section__helmet">
+			<h1 class="hero__heading">{{ post.title }}</h1>
+		</div>
 		<article id="post-{{post.ID}}" class="prose post-type-{{post.post_type}}">
 			{{ post.content }}
 		</article>

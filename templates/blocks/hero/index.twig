@@ -1,0 +1,16 @@
+<section id="hero--{{ block.id }}" class="section py-18" is="block--hero">
+    <div class="container">
+        <div class="flex--right">
+            <div class="hero--right">
+                {% if post.eyebrow %}
+                    <p class="eyebrow">{{ post.eyebrow }}</p>
+                {% endif %}
+                <h1 class="hero--heading">{{ post.heading }}</h1>
+                <p class="hero--subheading">{{ post.subheading }}</p>
+                {% if post.has_button %}
+                    <a href="{{ post.button_link }}" class="btn btn--primary">{{ post.button_text }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

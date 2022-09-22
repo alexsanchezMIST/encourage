@@ -1,0 +1,9 @@
+<section id="logos--{block.id}" class="section" is="block--logos">
+    <div class="container">
+        <div class="logos--wrapper">
+            {% for field in fields.logo %}
+                <img src="{{ fields.image }}" alt="{{ fields.image.alt }} class="logo">
+            {% endfor %}
+        </div>
+    </div>
+</section>

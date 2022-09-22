@@ -1,0 +1,20 @@
+[is="block--hero"] {
+  .flex--right {
+    @media screen and (min-width: map-get($breakpoints, "large")) {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+  .hero--right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 3.75rem;
+    padding-inline: 2.5rem;
+    border: 1px solid map-get($slate, "50");
+    box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+  }
+}

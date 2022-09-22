@@ -1,0 +1,121 @@
+[is="block--article"] {
+  .prose {
+    width: min(100%, 65ch);
+    margin-inline: auto;
+  }
+
+  .prose p {
+    margin-block: 1.25rem;
+  }
+
+  .prose a {
+    color: $sushi;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+
+  .prose strong {
+    font-weight: 700;
+    color: map-get($slate, "700");
+  }
+
+  .prose ul {
+    margin-block: 1.25rem;
+
+    @media screen and (min-width: map-get($breakpoints, "large")) {
+      margin-block: 2.5rem;
+    }
+  }
+
+  .prose h2 {
+    @extend h3;
+    font-weight: 500;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose h3 {
+    @extend h4;
+    font-weight: 500;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose figure {
+    width: 100%;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+
+    > img {
+      width: 100%;
+      box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+    }
+
+    > figcaption {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  .prose.has-lead p:first-of-type {
+    color: map-get($slate, "600");
+
+    @media screen and (max-width: map-get($breakpoints, "small")) {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, "small")) and (max-width: (map-get($breakpoints, "medium") - 0.0625rem)) {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, "medium")) and (max-width: (map-get($breakpoints, "large") - 0.0625rem)) {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, "large")) and (max-width: (map-get($breakpoints, "xl") - 0.0625rem)) {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, "xl")) and (max-width: (map-get($breakpoints, "2xl") - 0.0625rem)) {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, "2xl")) {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .prose li {
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.33rem;
+    margin-block: 1.25rem;
+    padding-left: 2.5rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+      height: 1rem;
+      width: 1rem;
+      background-image: url("static/img/leaf.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+}

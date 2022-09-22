@@ -73,7 +73,7 @@ class StarterSite extends Timber\Site {
 			'name' => 'content_block',
 			'title' => __('Content'),
 			'description' => __('A custom content block.'),
-			'render_callback' => [$this, 'my_acf_block_render_callback'],
+			'render_template' => get_template_directory_uri() . '/templates/blocks/article/index.twig',
 			'enqueue_style' => get_template_directory_uri() . '/templates/blocks/article/_style.scss',
 			'category' => 'formatting',
 			'icon' => 'superhero-alt',
